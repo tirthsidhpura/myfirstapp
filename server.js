@@ -39,4 +39,8 @@ app.use(express.static('public'))
 app.use(client)
 app.use(adminauth)
 app.use(admin)
-app.listen(port)
+// app.listen(port)
+const server = app.listen(port, () => {
+    const port = server.address().port;
+    console.log(`Express is working on port ${port}`);
+  });
