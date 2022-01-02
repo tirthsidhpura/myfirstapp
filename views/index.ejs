@@ -1,0 +1,39 @@
+<%- include('./partials/headerclient.ejs') %>
+<style>
+    a{
+        color: black;
+    }
+</style>
+<div class="image">
+    <div class="container">
+        <h1>welcome to the  Blog <SPan>oF TS 365</SPan></h1>
+        
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Placeat voluptas deleniti sint, excepturi assumenda
+            ipsum nihil temporibus ab iure eum numquam expedita perferendis!</p>
+            <button><a href="#b logs">Scroll down for more</a></button>
+    </div>
+    <img src="/images/pexels-kevin-ku-577585.jpg" alt="image">
+</div>
+
+<section id="blogs">
+
+    <%  for(let i =0 ;i< items.length;i++) { %> 
+        
+        <div class="container1">
+        <a  href="/fullarticle/<%=items[i]._id%>">
+            <img  src="/uploads/<%= items[i].image %>" alt="blogimage" height="300px" width="200px" >
+            <p><%= items[i].date.toLocaleDateString() %></p>
+            <h1> <%= items[i].title %></h1>
+            <p><%= items[i].title %></p>
+            <a id="readmore" href="/fullarticle/<%=items[i]._id%>">Readmore <span id="readmore1">></span> </a>
+        </a>
+            
+            
+        </div>
+    <% } %>
+
+</section>
+
+
+<%- include('./partials/footer.ejs') %>
+ 
