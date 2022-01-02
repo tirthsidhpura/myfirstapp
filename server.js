@@ -30,7 +30,7 @@ app.use(session({
     store:store
 }))
 
-const port = process.env.PORT;
+const port = process.env.PORT || 5000;
 
 app.use(bodyparser.urlencoded({extended:true}))
 app.set('view engine','ejs')
