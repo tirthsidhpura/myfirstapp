@@ -27,7 +27,8 @@ app.use(session({
     secret:"this is a secret",
     resave:false,
     saveUninitialized:false,
-    store:store
+    store:store,
+    auto_reconnect:true
 }))
 
 const port = process.env.PORT || 5000;
