@@ -24,11 +24,11 @@ const storage = multer.diskStorage({
 
 var upload = multer({storage:storage}).single('image')
 
-router.get('/admin',isAuth,(req,res)=>{
+router.get('/admin',(req,res)=>{
     res.render('admin')
 })
 
-router.post('/addblog',isAuth, upload,async (req,res)=>{
+router.post('/addblog', upload,async (req,res)=>{
     var filename = await req.file.filename
     var addBlogdetails = new addBlogmodel({
         title : req.body.title,
